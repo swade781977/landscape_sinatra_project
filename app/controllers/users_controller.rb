@@ -11,7 +11,6 @@ class UsersController < ApplicationController
 
     get '/users/:id' do
         @user = User.find_by_id(params[:id])
-        binding.pry
         if @user
             erb :'/users/show'
         else
@@ -30,9 +29,7 @@ class UsersController < ApplicationController
 
     post '/users' do
         @user = User.create(params)
-        binding.pry
         if @user.save
-            binding.pry
             redirect "/users/#{@user.id}"
         else
             puts "User Record Not Created Please Try Again"
