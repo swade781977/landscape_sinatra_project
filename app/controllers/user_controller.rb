@@ -28,9 +28,15 @@ class UserController < ApplicationController
     end
 
     post '/users' do
-        binding.pry
         @user = User.create(params)
-        redirect "/users/#{@user.id}"
+        binding.pry
+        if @user.save
+            binding.pry
+            redirect "/users/#{@user.id}"
+        else
+            puts "User Record Not Created Please Try Again"
+            redirect "/users/new"
+        end
     end
 
     patch '/users/:id' do
