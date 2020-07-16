@@ -12,6 +12,7 @@ gem 'pry'
 gem 'bcrypt'
 gem 'tux'
 gem "activemodel", require: "active_model"
+gem 'dotenv'
 
 group :test do
   gem 'rspec'

@@ -11,6 +11,7 @@ class UserController < ApplicationController
 
     get '/users/:id' do
         @user = User.find_by_id(params[:id])
+        binding.pry
         if @user
             erb :'/users/show'
         else
@@ -49,7 +50,7 @@ class UserController < ApplicationController
     end
 
     delete '/users/:id' do
-        user = User.find_b_id(params[:id])
+        user = User.find_by_id(params[:id])
         if user
             user.delete
         end
