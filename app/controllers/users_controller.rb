@@ -1,7 +1,15 @@
 class UsersController < ApplicationController
+   
+    before do
+        unless logged_in? || request.path_info == "/login"
+            puts "NOT LOGGED IN ACCESS DENIED !!!!"
+            redirect '/'
+        end
+    
+    end
+   
     get '/users' do
         @users= User.all
-
         erb :'/users/index'
     end
 
@@ -10,7 +18,7 @@ class UsersController < ApplicationController
     end
 
     get '/users/:id' do
-        @user = User.find_by_id(params[:id])
+        @user = current_user
         if @user
             erb :'/users/show'
         else
@@ -19,7 +27,7 @@ class UsersController < ApplicationController
     end
 
     get '/users/:id/edit' do 
-        @user = User.find_by_id(params[:id])
+        @user = current_user
         if @user
             erb :'/users/edit'
         else
@@ -28,7 +36,7 @@ class UsersController < ApplicationController
     end
 
     post '/users' do
-        @user = User.create(params)
+        @user = User.build(params)
         if @user.save
             redirect "/users/#{@user.id}"
         else
@@ -38,7 +46,7 @@ class UsersController < ApplicationController
     end
 
     patch '/users/:id' do
-        @user = User.find_by_id(params[:id])
+        @user = current_user
         if @user.update(name: params[:name], email: params[:email], username: params[:username], password_digest: params[:password_digest])
             redirect "/users/#{@user.id}"
         else

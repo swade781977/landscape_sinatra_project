@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
 
+    
     get '/login' do
         erb :"sessions/login"
     end
@@ -17,7 +18,7 @@ class SessionsController < ApplicationController
     end
 
     get '/logout' do
-        sessions.clear
+        session.clear
         redirect '/login'
     end
 end
