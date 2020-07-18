@@ -6,14 +6,25 @@ class SessionsController < ApplicationController
     end
 
     post '/login' do
-        user = User.find_by(email: params[:email]) || User.find_by(username: params[:email])
+        user = User.find_by(email: params[:email]) 
+        customer = Customer.find_by(email: params[:email])
+       
+
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
-            session[:username] = user.username
             session[:email] = user.email
+            puts "You are Logged in"
             redirect "/users/#{user.id}"
         else
-            redirect '/login'
+            if customer && customer.authenticate(params[:password])
+                session[:customer_id] = customer.id
+                puts "You ARE Logged in"
+                
+                redirect "/customers/#{customer.id}"
+            else
+                puts "You are NOT Logged in"
+                redirect '/login'
+            end
         end
     end
 

@@ -11,6 +11,7 @@ ActiveRecord::Base.establish_connection(
 require 'dotenv'
 Dotenv.load
 
+require 'base64'
 require 'securerandom'
 require './app/controllers/application_controller'
 require_all 'app'

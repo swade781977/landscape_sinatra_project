@@ -1,0 +1,14 @@
+=> [[32m#<User:0x00007ffff0fca538[0m
+  id: [1;34m1[0m,
+  name: [31m[1;31m"[0m[31mbuddy[1;31m"[0m[31m[0m,
+  email: [31m[1;31m"[0m[31mbuddy@buddy.com[1;31m"[0m[31m[0m,
+  username: [31m[1;31m"[0m[31mbuddy[1;31m"[0m[31m[0m,
+  password_digest: [31m[1;31m"[0m[31m$2a$12$WDzsmsOi6IjfQiyJWtx1W.OlXgnjYsicQikuk9y7/2WwBM.9Iza8i[1;31m"[0m[31m[0m,
+  employee: [1;36mnil[0m[32m>[0m,
+ [32m#<User:0x00007ffff0fca1a0[0m
+  id: [1;34m2[0m,
+  name: [31m[1;31m"[0m[31mdan[1;31m"[0m[31m[0m,
+  email: [31m[1;31m"[0m[31mdan@dan.com[1;31m"[0m[31m[0m,
+  username: [31m[1;31m"[0m[31mdan[1;31m"[0m[31m[0m,
+  password_digest: [31m[1;31m"[0m[31m$2a$12$ID6sXA0o97LaE2viwvm6ser7T4waLClKn556jD11SdMqwRxrBKm/S[1;31m"[0m[31m[0m,
+  employee: [1;36mnil[0m[32m>[0m]

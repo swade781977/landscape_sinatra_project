@@ -11,13 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200716204019) do
+ActiveRecord::Schema.define(version: 20200717234945) do
+
+  create_table "customers", force: :cascade do |t|
+    t.string  "first_name"
+    t.string  "last_name"
+    t.string  "email"
+    t.string  "address"
+    t.string  "city"
+    t.string  "state"
+    t.integer "zip"
+    t.text    "comment"
+    t.string  "password_digest"
+  end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "username"
-    t.string "password_digest"
+    t.string  "name"
+    t.string  "email"
+    t.string  "username"
+    t.string  "password_digest"
+    t.boolean "employee"
   end
 
 end
